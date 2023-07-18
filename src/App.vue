@@ -19,6 +19,7 @@
 			</tr>
 		</table>
 		<a-button type="link" style="margin-top: 30px;" @click="clear">清空</a-button>
+		<a-divider />
 	</div>
 </template>
 
