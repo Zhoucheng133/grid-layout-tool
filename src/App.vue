@@ -20,7 +20,8 @@
 		</table>
 		<a-button type="link" style="margin-top: 30px;" @click="clear">清空</a-button>
 		<a-divider />
-		<v-md-preview :text="text" class="codeText"></v-md-preview>
+		<v-md-preview :text="containerText" class="codeText" style="width: 100%;"></v-md-preview>
+		<v-md-preview :text="cellText" class="codeText" style="width: 100%;"></v-md-preview>
 	</div>
 </template>
 
@@ -35,25 +36,49 @@ export default {
 
 			firstClick:null,
 			secondClick:null,
-			text:`
+			containerText:`
 - container
   \`\`\`css
   .container{
-    // width: ;
-    // height: ;
-    // grid-gap: ; 
+    /* width: ; */
+    /* height: ; */
+    /* grid-gap: ; */
 
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    grid-template-rows: repeat(6, 1fr);
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: repeat(1, 1fr);
   }
   \`\`\`
 `,
+cellText:`
+- cell
+  \`\`\`css
+  .cell{
+    grid-auto-columns: 1fr;
+    grid-auto-rows: 1fr;
+	/* grid-row: ?; */
+	/* grid-column: ?; */
+  }
+  \`\`\`
+`
 		}
 	},
 	methods: {
 		changeContainerCode(){
+			this.containerText=`
+- container
+  \`\`\`css
+  .container{
+    /* width: ; */
+    /* height: ; */
+    /* grid-gap: ; */
 
+    display: grid;
+    grid-template-columns: repeat(${this.inputWidth}, 1fr);
+    grid-template-rows: repeat(${this.inputHight}, 1fr);
+  }
+  \`\`\`
+			`
 		},
 		clear(){
 			this.firstClick=null;

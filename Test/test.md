@@ -1,12 +1,9 @@
-- container
+- cell
   ```css
-  .container{
-    // width: ;
-    // height: ;
-    // grid-gap: ;
-
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    grid-template-rows: repeat(6, 1fr);
+  .cell{
+    grid-auto-columns: 1fr;
+    grid-auto-rows: 1fr;
+    grid-row: 1/5;
+    grid-column: 1/4;
   }
   ```
