@@ -77,6 +77,18 @@ cellText:`
   }
   \`\`\`
 `
+			}else{
+				this.cellText=`
+- cell
+  \`\`\`css
+  .cell{
+    grid-auto-columns: 1fr;
+    grid-auto-rows: 1fr;
+	/* grid-row: ?; */
+	/* grid-column: ?; */
+  }
+  \`\`\`
+`
 			}
 		},
 		changeContainerCode(){
