@@ -64,6 +64,21 @@ cellText:`
 		}
 	},
 	methods: {
+		changeCellCode(){
+			if(this.secondClick!=null){
+				this.cellText=`
+- cell
+  \`\`\`css
+  .cell{
+    grid-auto-columns: 1fr;
+    grid-auto-rows: 1fr;
+    grid-row: ${this.firstClick.row}/${this.secondClick.row+1};
+    grid-column: ${this.firstClick.col}/${this.secondClick.col+1};
+  }
+  \`\`\`
+`
+			}
+		},
 		changeContainerCode(){
 			this.containerText=`
 - container
@@ -137,6 +152,9 @@ cellText:`
 		},
 		inputHight:function(){
 			this.changeContainerCode();
+		},
+		secondClick:function(){
+			this.changeCellCode();
 		}
 	},
 	created() {
