@@ -20,6 +20,7 @@
 		</table>
 		<a-button type="link" style="margin-top: 30px;" @click="clear">清空</a-button>
 		<a-divider />
+		<v-md-preview :text="text" class="codeText"></v-md-preview>
 	</div>
 </template>
 
@@ -33,10 +34,27 @@ export default {
 			inputWidth:1,
 
 			firstClick:null,
-			secondClick:null
+			secondClick:null,
+			text:`
+- container
+  \`\`\`css
+  .container{
+    // width: ;
+    // height: ;
+    // grid-gap: ; 
+
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+  }
+  \`\`\`
+`,
 		}
 	},
 	methods: {
+		changeContainerCode(){
+
+		},
 		clear(){
 			this.firstClick=null;
 			this.secondClick=null;
@@ -88,6 +106,14 @@ export default {
 			}
 		}
 	},
+	watch: {
+		inputWidth:function(){
+			this.changeContainerCode();
+		},
+		inputHight:function(){
+			this.changeContainerCode();
+		}
+	},
 	created() {
 		
 	},
@@ -101,6 +127,9 @@ export default {
 </script>
 
 <style scoped>
+.codeText{
+	text-align: left;
+}
 .tableSelected{
 	background-color: red;
 	padding-bottom: 10px;
