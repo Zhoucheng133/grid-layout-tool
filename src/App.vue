@@ -54,8 +54,6 @@ cellText:`
 - cell
   \`\`\`css
   .cell{
-    grid-auto-columns: 1fr;
-    grid-auto-rows: 1fr;
 	/* grid-row: ?; */
 	/* grid-column: ?; */
   }
@@ -70,8 +68,6 @@ cellText:`
 - cell
   \`\`\`css
   .cell{
-    grid-auto-columns: 1fr;
-    grid-auto-rows: 1fr;
     grid-row: ${this.firstClick.row}/${this.secondClick.row+1};
     grid-column: ${this.firstClick.col}/${this.secondClick.col+1};
   }
@@ -82,8 +78,6 @@ cellText:`
 - cell
   \`\`\`css
   .cell{
-    grid-auto-columns: 1fr;
-    grid-auto-rows: 1fr;
 	/* grid-row: ?; */
 	/* grid-column: ?; */
   }
